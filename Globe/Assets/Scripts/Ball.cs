@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    SpriteRenderer spriteRenderer;
+
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    public void SetColor(Color col)
+    {
+        spriteRenderer.color = col;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

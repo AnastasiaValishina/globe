@@ -15,4 +15,12 @@ public class Ball : MonoBehaviour
         spriteRenderer.color = col;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "bullet")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }

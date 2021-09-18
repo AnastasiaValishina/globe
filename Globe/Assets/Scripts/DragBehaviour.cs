@@ -24,10 +24,10 @@ public class DragBehaviour : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        int xPos = Mathf.RoundToInt(mousePosition.x);
-        if (xPos >= -1 && xPos <= 9)
+        float xPos = mousePosition.x;
+        if (xPos >= -5f && xPos <= 5f)
         {
-            transform.position = new Vector2(xPos - deltaX, -4);
+            transform.position = new Vector2(xPos - deltaX, -8);
         }
     }
 

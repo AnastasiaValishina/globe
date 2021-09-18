@@ -7,12 +7,12 @@ public class RotateBehaviour : MonoBehaviour
     private Camera myCam;
     private Vector3 screenPos;
     private float angleOffset;
-    private Collider2D col;
+    private CircleCollider2D col;
 
     private void Start()
     {
         myCam = Camera.main;
-        col = GetComponent<Collider2D>();
+        col = GetComponent<CircleCollider2D>();
     }
 
     private void Update()

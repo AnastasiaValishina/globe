@@ -8,8 +8,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform parent;
     [SerializeField] private int startingNumber;
     [SerializeField] private float timeBetweenSpawns;
-    [SerializeField] private Color[] colors;
+    [SerializeField] private ColorType[] colors;
+    BallManager ballManager;
 
+    private void Awake()
+    {
+        ballManager = FindObjectOfType<BallManager>();
+    }
     private void Start()
     {
         StartCoroutine(SpawnBalls());
@@ -24,6 +29,8 @@ public class Spawner : MonoBehaviour
             Ball ball = Instantiate(ballPrefab, pos, Quaternion.identity);
             ball.transform.parent = parent;
             ball.SetColor(colors[randomIndex]);
+            ball.name = colors[randomIndex].ballKind.ToString();
+            ballManager.allBalls.Add(ball);
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }

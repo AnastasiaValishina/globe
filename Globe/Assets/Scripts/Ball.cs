@@ -5,22 +5,33 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
+    public ColorType _colorType;
+    public Collider2D col;
+    BallManager ballManager;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
+        ballManager = FindObjectOfType<BallManager>();
     }
-    public void SetColor(Color col)
+    public void SetColor(ColorType colorType)
     {
-        spriteRenderer.color = col;
+        _colorType = colorType;
+        spriteRenderer.color = colorType.color;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "bullet")
         {
-            Destroy(collision.gameObject);
+            ballManager.DestroyGroup(this);
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }

@@ -20,29 +20,19 @@ public class BallManager : MonoBehaviour
 {
     public List<Ball> allBalls = new List<Ball>();
 
-    private List<Ball> FindSameColor(Ball ball)
+    public List<Ball> FindTouching(Ball ball)
     {
-        List<Ball> sameTypeBalls = new List<Ball>();
+        List<Ball> nearBalls = new List<Ball>();
         foreach (Ball b in allBalls)
         {
-            if (ball.col.IsTouching(b.col) && ball._colorType.ballKind == b._colorType.ballKind)
+            if (ball.col.IsTouching(b.col))
             {
-                if (!sameTypeBalls.Contains(b))
+                if (!nearBalls.Contains(b))
                 {
-                    sameTypeBalls.Add(b);                  
+                    nearBalls.Add(b);
                 }
             }
         }
-        
-        return sameTypeBalls;
-    }
-
-    public void DestroyGroup(Ball ball)
-    {
-        List<Ball> sameTypeBalls = FindSameColor(ball);
-        foreach (Ball b in sameTypeBalls)
-        {
-            Destroy(b.gameObject);
-        }
+        return nearBalls;
     }
 }

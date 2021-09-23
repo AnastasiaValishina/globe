@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnBalls()
     {
+        int index = 1;
         for (int i = 0; i < startingNumber; i++)
         {
             int randomIndex = Random.Range(0, colors.Length);
@@ -29,8 +30,9 @@ public class Spawner : MonoBehaviour
             Ball ball = Instantiate(ballPrefab, pos, Quaternion.identity);
             ball.transform.parent = parent;
             ball.SetColor(colors[randomIndex]);
-            ball.name = colors[randomIndex].ballKind.ToString();
+            ball.name = index.ToString() + colors[randomIndex].ballKind.ToString();
             ballManager.allBalls.Add(ball);
+            index++;
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }

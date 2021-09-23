@@ -693,8 +693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 501122385912314235, guid: b2f14b2af0a0b87499845907a7fdca7f, type: 3}
   parent: {fileID: 814878823}
-  startingNumber: 40
-  timeBetweenSpawns: 0.1
+  startingNumber: 30
+  timeBetweenSpawns: 0.05
   colors:
   - ballKind: 0
     color: {r: 0.4392157, g: 0.6313726, b: 1, a: 1}
@@ -702,12 +702,6 @@ MonoBehaviour:
     color: {r: 0.9254902, g: 0.8, b: 0.40784314, a: 1}
   - ballKind: 2
     color: {r: 0.18039216, g: 0.8352941, b: 0.4509804, a: 1}
-  - ballKind: 3
-    color: {r: 1, g: 0.64705884, b: 0.007843138, a: 1}
-  - ballKind: 4
-    color: {r: 0.21568628, g: 0.25882354, b: 0.98039216, a: 1}
-  - ballKind: 5
-    color: {r: 1, g: 0.2784314, b: 0.34117648, a: 1}
 --- !u!4 &2110076190
 Transform:
   m_ObjectHideFlags: 0

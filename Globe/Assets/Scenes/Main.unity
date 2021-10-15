@@ -693,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 501122385912314235, guid: b2f14b2af0a0b87499845907a7fdca7f, type: 3}
   parent: {fileID: 814878823}
-  startingNumber: 30
+  startingNumber: 60
   timeBetweenSpawns: 0.05
   colors:
   - ballKind: 0

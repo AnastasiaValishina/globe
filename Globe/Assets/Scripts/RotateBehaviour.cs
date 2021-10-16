@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateBehaviour : MonoBehaviour
 {
+    [SerializeField] private Gun gun;
     private Camera myCam;
     private Vector3 screenPos;
     private float angleOffset;
@@ -36,6 +37,10 @@ public class RotateBehaviour : MonoBehaviour
                 float angle = Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg;
                 transform.eulerAngles = new Vector3(0, 0, angle + angleOffset);
             }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            gun.Shoot();
         }
     }
 }

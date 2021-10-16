@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Ball : MonoBehaviour
 {
@@ -9,7 +7,6 @@ public class Ball : MonoBehaviour
     public ColorType _colorType;
     public Collider2D col;
     BallManager ballManager;
-    //List<Ball> nearBalls = new List<Ball>();
 
     private void Awake()
     {
@@ -29,11 +26,11 @@ public class Ball : MonoBehaviour
         if (collision.tag == "bullet")
         {            
             Destroy(collision.gameObject);
-            DestroyBall();
+            DestroyThisBall();
         }
     }
 
-    public void DestroyBall()
+    public void DestroyThisBall()
     {
         ballManager.allBalls.Remove(this);
         List<Ball> nearBalls = ballManager.FindTouching(this);
@@ -42,7 +39,7 @@ public class Ball : MonoBehaviour
             if (!b) return;
             if (b._colorType.ballKind == this._colorType.ballKind)
             {
-                b.DestroyBall();
+                b.DestroyThisBall();
             }
         }
         Destroy(this.gameObject);

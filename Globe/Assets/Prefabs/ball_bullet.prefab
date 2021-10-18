@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6393406687329409023}
   - component: {fileID: 903408629524419562}
   - component: {fileID: 996757473318506195}
+  - component: {fileID: -7013132116234427472}
   m_Layer: 0
   m_Name: ball_bullet
   m_TagString: bullet
@@ -118,3 +119,20 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6393406687329409023}
   speed: 10
   canShoot: 0
+--- !u!114 &-7013132116234427472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150808874814315120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdc1dcf7a4d5cd4aaf224f576330e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorType:
+    ballKind: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+  spriteRenderer: {fileID: 6393406687329409023}
+  col: {fileID: 903408629524419562}

@@ -15,9 +15,13 @@ public class Ball : BallBase
     private void OnTriggerEnter2D(Collider2D collision)
     {        
         if (collision.tag == "bullet")
-        {            
-            Destroy(collision.gameObject);
-            DestroyThisBall();
+        {
+            BallBase bullet = collision.GetComponent<BallBase>();
+            if (bullet._colorType.ballKind == this._colorType.ballKind)
+            {
+                Destroy(collision.gameObject);
+                DestroyThisBall();
+            }
         }
     }
 

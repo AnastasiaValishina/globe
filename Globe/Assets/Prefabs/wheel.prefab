@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1745631662}
   m_Layer: 0
   m_Name: wheel
-  m_TagString: Untagged
+  m_TagString: wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da86f9a82ae736d4b84bbf60b30b9901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun: {fileID: 0}
 --- !u!68 &2561099031641275789
 EdgeCollider2D:
   m_ObjectHideFlags: 0

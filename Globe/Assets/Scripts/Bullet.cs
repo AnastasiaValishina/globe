@@ -18,9 +18,13 @@ public class Bullet : BallBase
     {
         if (collision.tag == "wheel" && tag == "bullet")
         {
+            Ball newBall = GetComponent<Ball>();
+            newBall._colorType = this._colorType;
             tag = "ball";
             gameObject.AddComponent<Rigidbody2D>();
-            GetComponent<Collider2D>().isTrigger = false;
+            transform.parent = collision.transform;
+            col.isTrigger = false;
+            ballManager.allBalls.Add(newBall);
             Destroy(this);
         }
     }

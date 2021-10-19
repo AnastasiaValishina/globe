@@ -3,14 +3,6 @@ using UnityEngine;
 
 public class Ball : BallBase
 {
-    public Collider2D col;
-    BallManager ballManager;
-
-    private void Awake()
-    {
-        col = GetComponent<Collider2D>();
-        ballManager = FindObjectOfType<BallManager>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {        

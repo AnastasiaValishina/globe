@@ -582,32 +582,6 @@ Transform:
   m_Father: {fileID: 1702425106}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1702191588 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8219132603571696738, guid: 89ad03238454d324a9019a76e972f166, type: 3}
-  m_PrefabInstance: {fileID: 2417537199264354816}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1702191593
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702191588}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!4 &1702425106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586976684294929432, guid: 222757d330cd2374da42e6557dba4a63, type: 3}
@@ -1101,10 +1075,6 @@ PrefabInstance:
       objectReference: {fileID: 237608827}
     - target: {fileID: 8219132603571696738, guid: 89ad03238454d324a9019a76e972f166, type: 3}
       propertyPath: m_Name
-      value: wheel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8219132603571696738, guid: 89ad03238454d324a9019a76e972f166, type: 3}
-      propertyPath: m_TagString
       value: wheel
       objectReference: {fileID: 0}
     m_RemovedComponents: []

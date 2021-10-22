@@ -25,14 +25,18 @@ public class BallManager : MonoBehaviour
         List<Ball> nearBalls = new List<Ball>();
         foreach (Ball b in allBalls)
         {
-            if (ball.col.IsTouching(b.col))
+            if (ball != null && b != null)
             {
-                if (!nearBalls.Contains(b))
+                if (ball.col.IsTouching(b.col))
                 {
-                    nearBalls.Add(b);
+                    if (!nearBalls.Contains(b))
+                    {
+                        nearBalls.Add(b);
+                    }
                 }
             }
         }
+        allBalls.RemoveAll(item => item == null);
         return nearBalls;
     }
 }

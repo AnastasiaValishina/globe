@@ -20,10 +20,11 @@ public class Bullet : BallBase
         {
             Ball newBall = GetComponent<Ball>();
             newBall._colorType = this._colorType;
+            newBall.col = this.col;
+            newBall.col.isTrigger = false;
             tag = "ball";
             gameObject.AddComponent<Rigidbody2D>();
             transform.parent = collision.transform;
-            col.isTrigger = false;
             ballManager.allBalls.Add(newBall);
             Destroy(this);
         }

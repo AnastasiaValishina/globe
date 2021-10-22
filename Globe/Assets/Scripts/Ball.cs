@@ -20,6 +20,7 @@ public class Ball : BallBase
     public void DestroyThisBall()
     {
         ballManager.allBalls.Remove(this);
+        // переделать на список
         List<Ball> nearBalls = ballManager.FindTouching(this);
         foreach (Ball b in nearBalls)
         {

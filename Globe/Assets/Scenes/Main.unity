@@ -982,7 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 501122385912314235, guid: b2f14b2af0a0b87499845907a7fdca7f, type: 3}
   parent: {fileID: 814878823}
-  startingNumber: 2
+  startingNumber: 40
   timeBetweenSpawns: 0.05
   colors:
   - ballKind: 0
@@ -1073,6 +1073,10 @@ PrefabInstance:
       propertyPath: gun
       value: 
       objectReference: {fileID: 237608827}
+    - target: {fileID: 3202559279638636751, guid: 89ad03238454d324a9019a76e972f166, type: 3}
+      propertyPath: delay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8219132603571696738, guid: 89ad03238454d324a9019a76e972f166, type: 3}
       propertyPath: m_Name
       value: wheel

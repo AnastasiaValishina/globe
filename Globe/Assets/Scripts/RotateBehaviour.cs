@@ -5,18 +5,19 @@ public class RotateBehaviour : MonoBehaviour
 {
     [SerializeField] private Gun gun;
     [SerializeField] private float delay;
+
+    public bool isRotating = false;
+
     private Camera myCam;
     private Vector3 screenPos;
     private float angleOffset;
     private CircleCollider2D col;
     private bool canRotate = true;
-    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         myCam = Camera.main;
         col = GetComponent<CircleCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -31,6 +32,7 @@ public class RotateBehaviour : MonoBehaviour
                 screenPos = myCam.WorldToScreenPoint(transform.position);
                 Vector3 vec3 = Input.mousePosition - screenPos;
                 angleOffset = (Mathf.Atan2(transform.right.y, transform.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg;
+                isRotating = true;
             }
         }
 
@@ -46,17 +48,15 @@ public class RotateBehaviour : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             StartCoroutine(ShootCor());
+            isRotating = false;
         }
     }
 
     IEnumerator ShootCor()
     {
         canRotate = false;
-        spriteRenderer.color = Color.gray;
-        yield return new WaitForSeconds(delay);
         gun.Shoot();
         yield return new WaitForSeconds(delay);
         canRotate = true;
-        spriteRenderer.color = Color.white;
     }
 }

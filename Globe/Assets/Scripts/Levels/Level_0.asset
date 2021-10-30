@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31680b64b39d08740a038aaf4047b9c2, type: 3}
+  m_Name: Level_0
+  m_EditorClassIdentifier: 
+  colors:
+  - ballKind: 1
+    color: {r: 1, g: 0.9720628, b: 0.56037736, a: 1}
+  - ballKind: 5
+    color: {r: 1, g: 0.390566, b: 0.390566, a: 1}
+  - ballKind: 2
+    color: {r: 0.5037646, g: 1, b: 0.39215684, a: 1}
+  timeBetweenSpawns: 0.04
+  ballsAtStart: 60

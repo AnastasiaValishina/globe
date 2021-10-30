@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BallBase : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer spriteRenderer; 
+    
     public ColorType _colorType;
-    [SerializeField] SpriteRenderer spriteRenderer;
     public Collider2D col;
     public BallManager ballManager;
 

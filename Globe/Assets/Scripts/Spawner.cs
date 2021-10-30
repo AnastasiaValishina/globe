@@ -6,14 +6,29 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Ball ballPrefab;
     [SerializeField] private Transform parent;
-    [SerializeField] private int startingNumber;
-    [SerializeField] private float timeBetweenSpawns;
-    public ColorType[] colors;
-    BallManager ballManager;
+    [SerializeField] LevelManager levelManager;
+
+    private int level;
+    private BallManager ballManager;
+    private int ballsAtStart;
+    private float timeBetweenSpawns;
+    private ColorType[] colors;
 
     private void Awake()
     {
-        ballManager = FindObjectOfType<BallManager>();
+        ballManager = GetComponent<GameData>().ballManager;
+        if (levelManager != null)
+        {
+            if (level < levelManager.levels.Length)
+            {
+                if (levelManager.levels[level] != null)
+                {                   
+                    ballsAtStart = levelManager.levels[level].ballsAtStart;
+                    timeBetweenSpawns = levelManager.levels[level].timeBetweenSpawns;
+                    colors = levelManager.levels[level].colors;
+                }
+            }
+        }        
     }
     private void Start()
     {
@@ -23,7 +38,7 @@ public class Spawner : MonoBehaviour
     IEnumerator SpawnBalls()
     {
         int nameIndex = 1;
-        for (int i = 0; i < startingNumber; i++)
+        for (int i = 0; i < ballsAtStart; i++)
         {
             Vector2 pos = transform.position;
             Ball ball = Instantiate(ballPrefab, pos, Quaternion.identity);
@@ -41,6 +56,4 @@ public class Spawner : MonoBehaviour
         int randomIndex = Random.Range(0, colors.Length);
         ball.SetColor(colors[randomIndex]);
     }
-
-
 }

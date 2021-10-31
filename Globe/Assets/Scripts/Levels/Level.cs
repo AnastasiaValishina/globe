@@ -8,4 +8,5 @@ public class Level : ScriptableObject
     public ColorType[] colors;
     public float timeBetweenSpawns;
     public int ballsAtStart;
+    public Goal[] levelGoals;
 }

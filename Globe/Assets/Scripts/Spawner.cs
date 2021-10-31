@@ -6,9 +6,9 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Ball ballPrefab;
     [SerializeField] private Transform parent;
-    [SerializeField] LevelManager levelManager;
 
-    private int level;
+    private int currentLevel;
+    private LevelManager levelManager;
     private BallManager ballManager;
     private int ballsAtStart;
     private float timeBetweenSpawns;
@@ -16,16 +16,19 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        ballManager = GetComponent<GameData>().ballManager;
+        ballManager = GameData.Instance.ballManager;
+        levelManager = GameData.Instance.levelManager;
+        currentLevel = GameData.Instance.currentLevel;
+
         if (levelManager != null)
         {
-            if (level < levelManager.levels.Length)
+            if (currentLevel < levelManager.levels.Length)
             {
-                if (levelManager.levels[level] != null)
+                if (levelManager.levels[currentLevel] != null)
                 {                   
-                    ballsAtStart = levelManager.levels[level].ballsAtStart;
-                    timeBetweenSpawns = levelManager.levels[level].timeBetweenSpawns;
-                    colors = levelManager.levels[level].colors;
+                    ballsAtStart = levelManager.levels[currentLevel].ballsAtStart;
+                    timeBetweenSpawns = levelManager.levels[currentLevel].timeBetweenSpawns;
+                    colors = levelManager.levels[currentLevel].colors;
                 }
             }
         }        

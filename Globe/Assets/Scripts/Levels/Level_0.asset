@@ -21,3 +21,8 @@ MonoBehaviour:
     color: {r: 0.5037646, g: 1, b: 0.39215684, a: 1}
   timeBetweenSpawns: 0.04
   ballsAtStart: 60
+  levelGoals:
+  - ballKind: 0
+    numberNeeded: 10
+  - ballKind: 1
+    numberNeeded: 20

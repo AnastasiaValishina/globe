@@ -29,6 +29,7 @@ public class Ball : BallBase
                 b.DestroyThisBall();
             }
         }
+        GoalManager.Instance.CompareGoals(this._colorType.ballKind);
         Destroy(this.gameObject);
     }
 }

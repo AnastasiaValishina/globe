@@ -846,7 +846,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 501122385912314235, guid: b2f14b2af0a0b87499845907a7fdca7f, type: 3}
   parent: {fileID: 814878823}
-  levelManager: {fileID: 11400000, guid: 07e0cc23d71273b49808263d8c4cc11b, type: 2}
 --- !u!4 &2110076190
 Transform:
   m_ObjectHideFlags: 0
@@ -886,14 +885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdac72cf64732234792e94e60b71dbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - ballKind: 0
-    color: {r: 0.37169808, g: 0.45064896, b: 1, a: 0}
-  - ballKind: 1
-    color: {r: 0.97817445, g: 1, b: 0.29622638, a: 0}
-  - ballKind: 2
-    color: {r: 0.49822313, g: 1, b: 0.390566, a: 0}
+  allColors: []
   ballManager: {fileID: 2110076191}
+  levelManager: {fileID: 11400000, guid: 07e0cc23d71273b49808263d8c4cc11b, type: 2}
 --- !u!1001 &2417537199264354816
 PrefabInstance:
   m_ObjectHideFlags: 0

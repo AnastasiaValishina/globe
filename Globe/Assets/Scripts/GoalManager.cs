@@ -5,14 +5,14 @@ using UnityEngine;
 [Serializable]
 public struct Goal
 {
-    public BallKind ballKind;
+    public ColorType colorType;
     public int numberNeeded;
     public int numberCollected;
 }
 
 public class GoalManager : MonoBehaviour
 {
-    private Goal[] levelGoals;
+    public Goal[] levelGoals;
     private int goalsCompleted = 0;
     private bool isGoalsReached = false;
 
@@ -32,6 +32,7 @@ public class GoalManager : MonoBehaviour
     private void Start()
     {
         levelGoals = GameData.Instance.levelManager.levels[GameData.Instance.currentLevel].levelGoals;
+        Debug.Log("GoalManager : " + levelGoals.Length);
     }
 
     private void Update()
@@ -58,7 +59,7 @@ public class GoalManager : MonoBehaviour
     {
         for (int i = 0; i < levelGoals.Length; i++)
         {
-            if (levelGoals[i].ballKind == ballKind)
+            if (levelGoals[i].colorType.ballKind == ballKind)
             {
                 levelGoals[i].numberCollected++;
             }

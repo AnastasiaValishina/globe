@@ -21,4 +21,9 @@ public class GameData : MonoBehaviour
             return instance;
         }
     }
+
+    public Level GetCurrentLevel()
+    {
+        return levelManager.levels[currentLevel];
+    }
 }

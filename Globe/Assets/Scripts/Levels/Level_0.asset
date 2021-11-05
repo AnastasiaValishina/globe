@@ -17,12 +17,18 @@ MonoBehaviour:
     color: {r: 1, g: 0.9720628, b: 0.56037736, a: 1}
   - ballKind: 5
     color: {r: 1, g: 0.390566, b: 0.390566, a: 1}
-  - ballKind: 2
-    color: {r: 0.5037646, g: 1, b: 0.39215684, a: 1}
+  - ballKind: 0
+    color: {r: 0.39215684, g: 0.815827, b: 1, a: 1}
   timeBetweenSpawns: 0.04
   ballsAtStart: 60
   levelGoals:
-  - ballKind: 0
+  - colorType:
+      ballKind: 1
+      color: {r: 1, g: 0.972549, b: 0.56078434, a: 1}
+    numberNeeded: 12
+    numberCollected: 0
+  - colorType:
+      ballKind: 5
+      color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
     numberNeeded: 10
-  - ballKind: 1
-    numberNeeded: 20
+    numberCollected: 0

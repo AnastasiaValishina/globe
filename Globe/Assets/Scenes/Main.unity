@@ -1135,6 +1135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a8dc0b198bb194ea188b8248c2585e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalPanel: {fileID: 419859008}
+  winScreen: {fileID: 213670563}
   levelGoals: []
 --- !u!1001 &2417537199264354816
 PrefabInstance:

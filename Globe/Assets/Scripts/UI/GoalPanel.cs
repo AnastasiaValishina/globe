@@ -11,13 +11,18 @@ public class GoalPanel : MonoBehaviour
     {
         goalItemsList = new List<GoalItem>();
         int levelsNumber = GoalManager.Instance.levelGoals.Length;
-        
+
         for (int i = 0; i < levelsNumber; i++)
         {
             GoalItem goalItem = Instantiate(goalPrefab, this.transform);
             goalItemsList.Add(goalItem);
         }
 
+        UpdateGoals();
+    }
+
+    public void UpdateGoals()
+    {
         for (int i = 0; i < goalItemsList.Count; i++)
         {
             goalItemsList[i].SetCounter(GoalManager.Instance.levelGoals[i].numberNeeded);

@@ -7,14 +7,16 @@ public struct Goal
 {
     public ColorType colorType;
     public int numberNeeded;
-    public int numberCollected;
+    public bool isReached;
 }
 
 public class GoalManager : MonoBehaviour
 {
+    [SerializeField] private GoalPanel goalPanel;
+    [SerializeField] private GameObject winScreen;
     public Goal[] levelGoals;
     private int goalsCompleted = 0;
-    private bool isGoalsReached = false;
+    private bool allGoalsReached = false;
 
     static GoalManager instance;
     public static GoalManager Instance
@@ -32,26 +34,25 @@ public class GoalManager : MonoBehaviour
     private void Start()
     {
         levelGoals = GameData.Instance.levelManager.levels[GameData.Instance.currentLevel].levelGoals;
-        Debug.Log("GoalManager : " + levelGoals.Length);
     }
 
     private void Update()
     {
-        if (isGoalsReached) return;
+        if (allGoalsReached) return;
 
         for (int i = 0; i < levelGoals.Length; i++)
         {
-            if (levelGoals[i].numberCollected >= levelGoals[i].numberNeeded)
+            if (!levelGoals[i].isReached && levelGoals[i].numberNeeded <= 0)
             {
+                levelGoals[i].isReached = true;
                 goalsCompleted++;
-                Debug.Log("goals completed " + goalsCompleted);
             }
         }
 
         if (goalsCompleted >= levelGoals.Length)
         {
-            isGoalsReached = true;
-            Debug.Log("you win");
+            allGoalsReached = true;
+            winScreen.SetActive(true);
         }
     }
 
@@ -61,7 +62,8 @@ public class GoalManager : MonoBehaviour
         {
             if (levelGoals[i].colorType.ballKind == ballKind)
             {
-                levelGoals[i].numberCollected++;
+                levelGoals[i].numberNeeded--;
+                goalPanel.UpdateGoals();
             }
         }
     }

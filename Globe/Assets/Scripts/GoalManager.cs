@@ -36,7 +36,7 @@ public class GoalManager : MonoBehaviour
         levelGoals = GameData.Instance.levelManager.levels[GameData.Instance.currentLevel].levelGoals;
     }
 
-    private void Update()
+    private void CheckReachedGoals()
     {
         if (allGoalsReached) return;
 
@@ -63,8 +63,9 @@ public class GoalManager : MonoBehaviour
             if (levelGoals[i].colorType.ballKind == ballKind)
             {
                 levelGoals[i].numberNeeded--;
-                goalPanel.UpdateGoals();
+                goalPanel.UpdateGoals();                
             }
         }
+        CheckReachedGoals();
     }
 }

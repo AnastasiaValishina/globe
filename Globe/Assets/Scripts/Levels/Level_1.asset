@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31680b64b39d08740a038aaf4047b9c2, type: 3}
-  m_Name: Level_0
+  m_Name: Level_1
   m_EditorClassIdentifier: 
   colors:
   - ballKind: 1
@@ -19,16 +19,23 @@ MonoBehaviour:
     color: {r: 1, g: 0.390566, b: 0.390566, a: 1}
   - ballKind: 0
     color: {r: 0.39215684, g: 0.815827, b: 1, a: 1}
+  - ballKind: 2
+    color: {r: 0.39215684, g: 1, b: 0.5805905, a: 1}
   timeBetweenSpawns: 0.04
   ballsAtStart: 60
   levelGoals:
   - colorType:
-      ballKind: 1
+      ballKind: 0
       color: {r: 1, g: 0.972549, b: 0.56078434, a: 1}
-    numberNeeded: 24
+    numberNeeded: 10
+    isReached: 0
+  - colorType:
+      ballKind: 0
+      color: {r: 0.39215687, g: 0.8156863, b: 1, a: 1}
+    numberNeeded: 20
     isReached: 0
   - colorType:
       ballKind: 5
       color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
-    numberNeeded: 9
+    numberNeeded: 30
     isReached: 0

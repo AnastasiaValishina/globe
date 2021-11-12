@@ -20,20 +20,26 @@ public class Spawner : MonoBehaviour
         levelManager = GameData.Instance.levelManager;
         currentLevel = GameData.Instance.currentLevel;
 
+        SetLevelData();
+    }
+
+    public void SetLevelData()
+    {
         if (levelManager != null)
         {
             if (currentLevel < levelManager.levels.Length)
             {
                 if (levelManager.levels[currentLevel] != null)
-                {                   
+                {
                     ballsAtStart = levelManager.levels[currentLevel].ballsAtStart;
                     timeBetweenSpawns = levelManager.levels[currentLevel].timeBetweenSpawns;
                     colors = levelManager.levels[currentLevel].colors;
                 }
             }
-        }        
+        }
     }
-    private void Start()
+
+    public void StartSpawning()
     {
         StartCoroutine(SpawnBalls());
     }
